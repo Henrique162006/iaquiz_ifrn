@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IAQUIZ_IFNC</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="screen" id="start-screen">
+    <h1>IAQUIZ_IFNC</h1>
+    <img src="https://cdn-icons-png.flaticon.com/512/4712/4712100.png" alt="Robô IA" width="120"/>
+    <p><strong>Escolha sua área:</strong></p>
+    <select id="area-select">
+      <option value="informatica">Informática</option>
+      <option value="administracao">Administração</option>
+      <option value="quimica">Química</option>
+    </select>
+    <p><strong>Nível de dificuldade:</strong></p>
+    <select id="nivel-select">
+      <option value="facil">Fácil</option>
+      <option value="medio">Médio</option>
+      <option value="dificil">Difícil</option>
+    </select>
+    <input type="text" id="username" placeholder="Seu nome"/>
+    <button onclick="startGame()">Iniciar Quiz</button>
+    <button onclick="toggleTheme()">Tema: <span id="theme-status">Escuro</span></button>
+  </div>
+
+  <div class="screen" id="quiz-screen" style="display: none;">
+    <h2 id="greeting"></h2>
+    <div id="question-container">
+      <p id="question-text"></p>
+      <div id="answers"></div>
+    </div>
+    <button onclick="nextQuestion()">Próxima</button>
+  </div>
+
+  <div class="screen" id="result-screen" style="display: none;">
+    <h2>Resultado Final</h2>
+    <p>Parabéns, <span id="final-username"></span>!</p>
+    <p>Você acertou <span id="score"></span> de <span id="total"></span> perguntas.</p>
+    <div id="badge"></div>
+    <div id="feedback"></div>
+    <h3>Ranking</h3>
+    <ul id="ranking"></ul>
+    <p id="chatbot"></p>
+    <p class="credits">Site criado por <strong>Henrique Eduardo & Yasmin Gabrielly</strong> – <em>Turma: Info3M</em></p>
+    <button onclick="location.reload()">Jogar Novamente</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
